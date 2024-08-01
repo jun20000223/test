@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        /*
+        :enabled => 활성 상태인 input 태그를 선택
+        :disabled => 비활성 상태인 input 태그를 선택
+        :selected => select 태그 내의 option 태그 중 현재 선택되어 있는 태그를 선택
+        :checked => checkbox 또는 radio에서 현재 check되어 있는 태그를 선택
+        */
+        $(function(){
+            $(":enabled").css("background-color", "skyblue");
+            $(":disabled").css("background-color", "red");
+        });
+    </script>
+</head>
+<body>
+    <input type="text"> <br>
+    <input type="password"> <br>
+    <input type="text" value="홍길동" disabled> <br>
+    <p>홍길동</p>
+    <input type="password" disabled> <br>
+</body>
+</html>

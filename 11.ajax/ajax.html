@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        /*
+        ajax(Asynchronous JavaScript and XML)
+        : 동적 웹페이지를 만들기 위한 개발 기법.
+        백그라운드 영역에서 서버와 통신하여 그 결과를 웹페이지의 일부분에만 표시할 수 있다.
+        ** 동기방식 : 요청을 보내고 요청을 받은 웹서버가 응답을 보내줄 때까지 기다린다.
+        ** 비동기방식 : 응답을 기다리지 않는다.
+        */
+        function getText() {
+            //ajax 기본형태
+            $.ajax({
+                url: "data01.txt", 
+                type: "get",
+                dataType: "text",
+                success: function(data, success, xhr) {
+                    console.log(data);
+                    // console.log(success);
+                    // console.log(xhr);
+                    $("#result").text(data);
+                }
+            });
+        }
+        function getHtml() {
+            $.ajax({
+                url: "data02.html",
+                success: function(data) {
+                    console.log(data);
+                    $("#result").html(data);
+                }
+            });
+        }
+        function getXml() {
+            $.ajax({
+                url: "data03.xml",
+                type: "get",
+                dataType: "xml",
+                success: function(data) {
+                    console.log(data);
+                    let xmlData = $(data).find("data");
+                    console.log(xmlData);
+                    $(xmlData).each(function(idx, obj) {
+                        console.log(idx);
+                        console.log(obj);
+                    });
+                    let str1 = $(xmlData).find("str1");
+                    console.log(str1);
+                    let str2 = $(xmlData).find("str2");
+                    console.log(str2);
+                    $("#result").append("str1:" + str1.text() + "<br>");
+                    $("#result").append("str2:" + str2.text() + "<br>");
+                } 
+            });
+        }
+        function getJson() {
+            $.ajax({
+                url: "data04.json",
+                success: function(data) {
+                    console.log(data);
+                    $("#result").append("data1: " + data.data1 + "<br>");
+                    $("#result").append("data2: " + data.data2 + "<br>");
+                    $("#result").append("data3: " + data.data3 + "<br>");
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="문자열 데이터" onclick="getText()">
+    <input type="button" value="HTML 데이터" onclick="getHtml()">
+    <input type="button" value="XML 데이터" onclick="getXml()">
+    <input type="button" value="JSON 데이터" onclick="getJson()">
+    <div id="result"></div>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        /*
+        :gt(n) => 선택자에 해당하는 태그 중 인덱스(0부터) n번째 태그 이후의 태그들이 선택
+        :lt(n) => 선택자에 해당하는 태그 중 인덱스(0부터) n번째 태그 이전의 태그들이 선택
+        :nth-last-child(n) => 각 영역에 뒤에서 인덱스 n번째 해당하는 태그를 선택.
+                                선택자에 해당하지 않으면 선택되지 않는다.
+        :nth-last-of-type(n) => 각 영역에 뒤에서 인덱스 n번째 해당하는 태그를 선택
+                                태그 기준으로 n번째 태그를 찾는다.
+        */
+        $(function(){
+            $("p:gt(0)").css("background-color", "skyblue");
+            $("p:lt(7)").css("color", "red");
+            $("p:nth-last-child(2)").css("font-style", "italic");
+            $("p:nth-last-of-type(2)").css("font-size", "30px");
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <p>p태그</p>
+        <p>p태그</p>
+        <p>p태그</p>
+    </div>
+    <hr>
+    <div>
+        <p>p태그</p>
+        <p>p태그</p>
+        <p>p태그</p>
+    </div>
+    <hr>
+    <div>
+        <p>p태그</p>
+        <p>p태그</p>
+        <div>div태그</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        /*
+        
+        */
+        $(function(){
+            
+        });
+
+        function gettest1(){
+            //text() : 태그 사이의 컨텐츠 문자열을 제어
+            // let str = document.getElementById("test1");
+            let str = $("#test1").text();
+            alert(str);
+        };
+
+        function gettest2(){
+            //HTML 태그는 가져오지 않는다.
+            let str = $("#test2").html();
+            //let str = document.getElementById("test2").innerHTML;
+            alert(str);
+        };
+
+        function settest3() {
+            $("#test3").text("test3 문자열 새로 설정");
+        };
+
+        function settest3Html() {
+            $("#test3").html("<a href='https://www.google.com'>google</a>");
+        }
+    </script>
+</head>
+<body>
+    <div id="test1">test1문자열</div>
+    <input type="button" value="test1 문자열 가져오기" onclick="gettest1()">
+    
+    <div id="test2"><a href="https://www.google.com">google</a></div>
+    <input type="button" value="test2 문자열 가져오기" onclick="gettest2()">
+
+    <div id="test3">test3문자열</div>
+    <input type="button" value="test3 문자열 설정하기" onclick="settest3()">
+    <input type="button" value="test3 HTML 설정하기" onclick="settest3Html()">
+</body>
+</html>

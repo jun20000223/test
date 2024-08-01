@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        /*
+        silbilings : 선택된 태그와 같은 계층의 모든 태그들을 선택
+        */
+        $(function(){
+            // $("#test1").siblings().css("border-color", "red");
+            $("#test1").siblings(".test2").css("border-color", "red");
+        });
+    </script>
+    <style>
+        div {
+            border: 2px solid black;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test1">div1</div>
+    <div class="test2">div2</div>
+    <div id="test1">div3</div>
+    <div class="test2">div4</div>
+    <div class="test1">div5</div>
+</body>
+</html>

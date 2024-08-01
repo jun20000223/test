@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        //선택자1.선택자2 : 모든 선택자를 만족하는 태그를 선택
+        $(function(){
+            $("div.test1").css("background-color", "red");
+            $("div.test2").css("background-color", "orange");
+            $("p.test1").css("background-color", "yellow");
+            $("p.test2").css("background-color", "green");
+            $("p#test3").css("background-color", "blue");
+        });
+    </script>
+</head>
+<body>
+    <div class="test1">div test1</div>
+    <div class="test2">div test2</div>
+    <p class="test1">p test1</p>
+    <p class="test2">p test2</p>
+    <p id="test3">p test3</p>
+</body>
+</html>
